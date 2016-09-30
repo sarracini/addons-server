@@ -25,8 +25,6 @@ DEBUG = False
 DEBUG_PROPAGATE_EXCEPTIONS = False
 SESSION_COOKIE_SECURE = True
 
-API_THROTTLE = False
-
 REDIRECT_SECRET_KEY = env('REDIRECT_SECRET_KEY')
 
 CDN_HOST = 'https://addons.cdn.mozilla.net'
@@ -134,11 +132,6 @@ PACKAGER_PATH = os.path.join(TMP_PATH, 'packager')
 
 ADDONS_PATH = NETAPP_STORAGE_ROOT + u'/files'
 
-# Remove DetectMobileMiddleware from middleware in production.
-detect = 'mobility.middleware.DetectMobileMiddleware'
-
-RESPONSYS_ID = env('RESPONSYS_ID')
-
 ES_TIMEOUT = 60
 ES_HOSTS = env('ES_HOSTS')
 ES_URLS = ['http://%s' % h for h in ES_HOSTS]
@@ -149,10 +142,6 @@ STATSD_PREFIX = env('STATSD_PREFIX')
 
 GRAPHITE_HOST = env('GRAPHITE_HOST')
 GRAPHITE_PREFIX = env('GRAPHITE_PREFIX')
-
-CEF_PRODUCT = STATSD_PREFIX
-
-NEW_FEATURES = True
 
 CLEANCSS_BIN = 'cleancss'
 UGLIFY_BIN = 'uglifyjs'
@@ -167,8 +156,6 @@ GOOGLE_ANALYTICS_CREDENTIALS['user_agent'] = None
 GOOGLE_ANALYTICS_CREDENTIALS['token_expiry'] = datetime.datetime(2013, 1, 3, 1, 20, 16, 45465)  # noqa
 
 GOOGLE_API_CREDENTIALS = env('GOOGLE_API_CREDENTIALS')
-
-GEOIP_URL = 'https://geo.services.mozilla.com'
 
 AES_KEYS = env.dict('AES_KEYS')
 

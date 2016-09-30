@@ -952,12 +952,6 @@ FETCH_BY_ID = True
 # it's not possible to invalidate these queries.
 CACHE_COUNT_TIMEOUT = 60
 
-# To enable pylibmc compression (in bytes)
-PYLIBMC_MIN_COMPRESS_LEN = 0  # disabled
-
-# External tools.
-JAVA_BIN = '/usr/bin/java'
-
 # Add-on download settings.
 PRIVATE_MIRROR_URL = '/_privatefiles'
 
@@ -1367,9 +1361,6 @@ MAX_REVIEW_ATTACHMENT_UPLOAD_SIZE = 5 * 1024 * 1024
 # with your keys.
 NOBOT_RECAPTCHA_PUBLIC_KEY = ''
 NOBOT_RECAPTCHA_PRIVATE_KEY = ''
-
-# Send Django signals asynchronously on a background thread.
-ASYNC_SIGNALS = True
 
 # Performance for persona pagination, we hardcode the number of
 # available pages when the filter is up-and-coming.
