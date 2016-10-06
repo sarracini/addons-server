@@ -145,9 +145,6 @@ ES_INDEXES = dict((k, '%s_%s' % (v, ENV)) for k, v in ES_INDEXES.items())
 STATSD_HOST = env('STATSD_HOST')
 STATSD_PREFIX = env('STATSD_PREFIX')
 
-GRAPHITE_HOST = env('GRAPHITE_HOST')
-GRAPHITE_PREFIX = env('GRAPHITE_PREFIX')
-
 REDIRECT_URL = 'https://outgoing.stage.mozaws.net/v1/'
 
 CLEANCSS_BIN = 'cleancss'

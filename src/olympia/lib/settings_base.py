@@ -1462,11 +1462,6 @@ STATSD_PREFIX = 'amo'
 # The django statsd client to use, see django-statsd for more.
 STATSD_CLIENT = 'django_statsd.clients.normal'
 
-GRAPHITE_HOST = 'localhost'
-GRAPHITE_PORT = 2003
-GRAPHITE_PREFIX = 'amo'
-GRAPHITE_TIMEOUT = 1
-
 # IP addresses of servers we use as proxies.
 KNOWN_PROXIES = []
 
