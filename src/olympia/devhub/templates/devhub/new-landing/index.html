@@ -1,1 +1,51 @@
-New DevHub Landing
+<!DOCTYPE html>
+<html lang="{{ LANG }}" dir="{{ DIR }}">
+  <head>
+    <meta charset="utf-8">
+      {% if not settings.ENGAGE_ROBOTS %}
+        <meta name="robots" content="noindex">
+      {% endif %}
+    {% block extrameta %}{% endblock %}
+    <title>{% block title %}{{ dev_page_title() }}{% endblock %}</title>
+
+    <link rel="shortcut icon" type="image/x-icon"
+          href="{{ STATIC_URL }}img/favicon.ico">
+
+    {% block rss_feed %}{% endblock %}
+
+    {# L10n: {0} is an application, like Firefox. #}
+    <link title="{{ _('{0} Add-ons')|f(APP.pretty) }}"
+          rel="search" type="application/opensearchdescription+xml"
+          href="{{ url('amo.opensearch') }}" />
+
+    {% block site_css %}
+      {{ css('devhub/css') }}
+    {% endblock %}
+
+    {% block extrahead %}{% endblock %}
+
+    {% if request.user.is_authenticated() %}
+      <meta name="csrf" content="{{ csrf_token }}">
+    {% endif %}
+
+    {{ js('preload') }}
+  </head>
+  <body class="html-{{ DIR }} {{ request.APP.short }} moz-header-slim {% block bodyclass %}{% endblock %} restyle"
+        data-app="{{ request.APP.short }}"
+        data-appname="{{ request.APP.pretty }}"
+        data-appid="{{ request.APP.id }}"
+        data-anonymous="{{ (not request.user.is_authenticated())|json }}"
+        data-readonly="{{ settings.READ_ONLY|json }}"
+        data-media-url="{{ MEDIA_URL }}"
+        data-static-url="{{ STATIC_URL }}"
+        data-raven-dsn="{{ settings.RAVEN_DSN }}"
+        data-raven-urls="{{ settings.RAVEN_ALLOW_LIST }}"
+        {% block bodyattrs %}{% endblock %}>
+
+  <span>New Landing Page...</span>
+
+  {% block site_js %}
+    <script src="{{ CDN_HOST }}{{ cache_buster(url('jsi18n')) }}"></script>
+  {% endblock %}
+  </body>
+</html>
