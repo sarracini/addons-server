@@ -2,10 +2,12 @@
 <html lang="{{ LANG }}" dir="{{ DIR }}">
   <head>
     <meta charset="utf-8">
-      {% if not settings.ENGAGE_ROBOTS %}
-        <meta name="robots" content="noindex">
-      {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if not settings.ENGAGE_ROBOTS %}
+      <meta name="robots" content="noindex">
+    {% endif %}
     {% block extrameta %}{% endblock %}
+
     <title>{% block title %}{{ dev_page_title() }}{% endblock %}</title>
 
     <link rel="shortcut icon" type="image/x-icon"
