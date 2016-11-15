@@ -26,14 +26,14 @@ section {
 }
 
 .button {
-  padding: 10px 30px;
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  border: 1px @button-border;
   border-radius: 2px;
+  border: 1px @button-border;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: inline-block;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
 
   &.primary {
     background-color: @primary-button-background;
@@ -70,19 +70,19 @@ body {
 
 .devhub-navigation {
   ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
-    list-style: none;
-    display: flex;
-    align-items: center;
 
     li {
       margin: 10px 20px;
 
       &:first-child {
-        margin-right: auto;
         margin-left: 0;
+        margin-right: auto;
       }
     }
 
