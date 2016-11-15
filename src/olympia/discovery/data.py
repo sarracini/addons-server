@@ -11,8 +11,8 @@ class DiscoItem(object):
 # At the moment the disco pane items are hardcoded in this file in the repos,
 # which allows us to integrate in our translation workflow easily.
 discopane_items = [
-    # Glitter Closeup
-    DiscoItem(addon_id=466579),
+    # Theme: Aurora Australis
+    DiscoItem(addon_id=49331),
 
     # uBlock Origin
     DiscoItem(
@@ -37,19 +37,18 @@ discopane_items = [
               u'lets you edit, annotate, and share images.'),
             '</blockquote>')),
 
-    # Metal Flowers - animated
-    DiscoItem(addon_id=188332),
+    # Theme: Snow Style
+    DiscoItem(addon_id=68349, heading=_(u'Snow Style')),
 
-    # Emoji Cheatsheet
+    # OmniSidebar
     DiscoItem(
-        addon_id=511962,
-        heading=_(u'Up your emoji game {start_sub_heading}with {addon_name}'
+        addon_id=296534,
+        heading=_(u'Easily access bookmarks {start_sub_heading}with {addon_name}'
                   '{end_sub_heading}'),
         description=string_concat(
             '<blockquote>',
-            _(u'Get instant access to a bunch of great emojis and easily use '
-              u'them on popular sites like Facebook, Twitter, Google+, and '
-              u'others.'),
+            _(u'Are you constantly scrolling through your bookmarks? '
+              u'Bring your lists into view with a single, simple gesture.'),
             '</blockquote>')),
 
     # Video DownloadHelper
@@ -65,6 +64,6 @@ discopane_items = [
               u'and others.'),
             '</blockquote>')),
 
-    # Live with Music
-    DiscoItem(addon_id=23428),
+    # Theme: My Vinyl
+    DiscoItem(addon_id=125478),
 ]
