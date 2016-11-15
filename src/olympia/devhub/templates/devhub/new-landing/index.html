@@ -31,13 +31,6 @@
     {{ js('preload') }}
   </head>
   <body class="html-{{ DIR }} {{ request.APP.short }} {% block bodyclass %}{% endblock %}"
-        data-app="{{ request.APP.short }}"
-        data-appname="{{ request.APP.pretty }}"
-        data-appid="{{ request.APP.id }}"
-        data-anonymous="{{ (not request.user.is_authenticated())|json }}"
-        data-readonly="{{ settings.READ_ONLY|json }}"
-        data-media-url="{{ MEDIA_URL }}"
-        data-static-url="{{ STATIC_URL }}"
         data-raven-dsn="{{ settings.RAVEN_DSN }}"
         data-raven-urls="{{ settings.RAVEN_ALLOW_LIST }}"
         {% block bodyattrs %}{% endblock %}>
