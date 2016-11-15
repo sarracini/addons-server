@@ -44,9 +44,8 @@ discopane_items = [
     # OmniSidebar
     DiscoItem(
         addon_id=296534,
-        heading=_(
-          u'Easily access bookmarks {start_sub_heading}with {addon_name}'
-          u'{end_sub_heading}'),
+        heading=_(u'Easily access bookmarks {start_sub_heading}with '
+                  u'{addon_name}{end_sub_heading}'),
         description=string_concat(
             '<blockquote>',
             _(u'Are you constantly scrolling through your bookmarks? '
