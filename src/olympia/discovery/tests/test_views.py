@@ -91,22 +91,19 @@ class TestDiscoveryViewList(TestCase):
         assert response.data['results']
 
     def test_missing_addon(self):
-        addon_factory(id=discopane_items[0].addon_id, type=amo.ADDON_PERSONA)
-        addon_factory(id=discopane_items[1].addon_id, type=amo.ADDON_EXTENSION)
-        addon_deleted = addon_factory(
-            id=discopane_items[2].addon_id, type=amo.ADDON_EXTENSION)
+        addon_deleted = self.addons[287841]
         addon_deleted.delete()
-        theme_disabled_by_user = addon_factory(
-            id=discopane_items[3].addon_id, type=amo.ADDON_PERSONA)
+
+        theme_disabled_by_user = self.addons[68349]
         theme_disabled_by_user.update(disabled_by_user=True)
-        addon_factory(
-            id=discopane_items[4].addon_id, type=amo.ADDON_EXTENSION,
-            status=amo.STATUS_NOMINATED)
+
+        self.addons[296534].update(status=amo.STATUS_NOMINATED)
 
         response = self.client.get(self.url)
         assert response.data
-        # Only the first 2 add-ons exist and are public.
-        assert response.data['count'] == 2
+
+        # Only 4 of all (7) add-ons exist and are public.
+        assert response.data['count'] == 4
         assert response.data['next'] is None
         assert response.data['previous'] is None
         assert response.data['results']
