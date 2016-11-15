@@ -39,7 +39,7 @@ discopane_items = [
             '</blockquote>')),
 
     # Theme: Snow Style
-    DiscoItem(addon_id=68349, addon_name=_(u'Snow Style')),
+    DiscoItem(addon_id=68349, addon_name=u'Snow Style'),
 
     # OmniSidebar
     DiscoItem(
